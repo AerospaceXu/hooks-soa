@@ -1,20 +1,28 @@
 import React from 'react';
-import './App.css';
+import styled from 'styled-components';
 
-import { GlobalService, useRootGlobalService } from './services/global.service';
+import {
+  GlobalService,
+  useRootGlobalService
+} from './app/services/global.service';
 
-import Button from './components/Button';
-import Panel from './components/Panel';
+import Button from './app/components/Button';
+import Panel from './app/components/Panel';
 
-function App() {
+const Wrapper = styled.div`
+  width: 200px;
+  margin: 88px auto;
+`;
+
+const App: React.FC = () => {
   return (
     <GlobalService.Provider value={useRootGlobalService()}>
-      <div className="App">
+      <Wrapper>
         <Button />
         <Panel />
-      </div>
+      </Wrapper>
     </GlobalService.Provider>
   );
-}
+};
 
 export default App;

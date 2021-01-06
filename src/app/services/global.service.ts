@@ -1,4 +1,6 @@
-import { createContext, useCallback, useContext, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
+
+import { createService } from '../utils/createService';
 
 interface State {
   count: number;
@@ -19,5 +21,4 @@ export const useRootGlobalService = () => {
 
 export const useGlobalService = () => useContext(GlobalService);
 
-// @ts-ignore
-export const GlobalService = createContext<State>(null);
+export const GlobalService = createService<State>();
