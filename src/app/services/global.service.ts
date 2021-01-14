@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { createService } from '../utils/createService';
 
@@ -18,7 +18,5 @@ export const useRootGlobalService = () => {
     handleAdd
   };
 };
-
-export const useGlobalService = () => useContext(GlobalService);
 
 export const GlobalService = createService<State>();
